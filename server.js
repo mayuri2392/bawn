@@ -9,7 +9,7 @@ const User = require('./models/User');
 app.use(express.urlencoded({ extended: false }));
 const db = 'mongodb+srv://mayuri2305:mayuri@cluster0-mhqo2.mongodb.net/astrolabs?retryWrites=true';
 
-
+// Connect to MongoDB
 mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log('MongoDB Connected'))
