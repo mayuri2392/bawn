@@ -15,10 +15,6 @@ mongoose
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
 
-/* GET home page. */
-app.get('/', (req,res) => res.json({
-	msg: "Hello! Welcome to BAWN(Backend API with NodeJS)"
-}));
 
 //Post register
 app.post('/register', (req, res) => {
