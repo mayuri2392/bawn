@@ -4,8 +4,6 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const User = require('./models/User');
 
-app.use(bodyParser.urlencoded({urlencoded: false}));
-app.use(bodyParser.json());
 
 // Body parser middleware
 app.use(express.urlencoded({ extended: false }));
