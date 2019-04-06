@@ -86,13 +86,13 @@ User.findOne({ email }).then(user => {
         })
     }
 })
-});```
+});
 
 mer route
     return res.json({
         "me": req.user
     })
-});``
+});
  
    
  
