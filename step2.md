@@ -50,8 +50,12 @@ app.post('/register', (req, res) => {
             });
         }
     });
-});```
+});
+
+
 5. Login
+
+
 app.post('/login', (req, res) => {
 
 const email = req.body.email;
