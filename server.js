@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const User = require('./models/User');
 // Body parser middleware
 app.use(express.urlencoded({ extended: false }));
-const db = 'mongodb+srv://mayuri2305:mayuri@cluster0-mhqo2.mongodb.net/bawn?retryWrites=true';
+const db = 'mongodb+srv://mayuri2305:mayuri@cluster0-mhqo2.mongodb.net/astrolabs?retryWrites=true';
 
 // Connect to MongoDB
 mongoose
