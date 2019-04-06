@@ -1,6 +1,6 @@
 Install mongoose and body-parser npm install mongoose body-parser
 Connect database with mongoose
-const db = 'mongodb://localhost:27017/bawn_db';
+const db = ' ';
 
 // Connect to MongoDB
 mongoose
