@@ -17,5 +17,24 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     .catch(err => console.log(err));
 });
 
+//Get whole list of todo list
+router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+    List.find({user: req.user})
+    	.then(list => res.json(list))
+    	.catch(err => console.log(err));
+});
+
+//Add new task i list
+router.post('/:id/tasks', passport.authenticate('jwt', { session: false }), (req, res) => {
+    List.findById(req.params.id)
+    	.then(list=> {
+    		const task = new Task({name: req.body.name})
+    		list.tasks.push(task);
+    		list.save()
+    			.then(list => res.json(list))
+    			.catch(err => console.log(err));
+    	})
+    	.catch(err => console.log(err));
+});
 
 module.exports = router;
