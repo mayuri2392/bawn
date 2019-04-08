@@ -29,6 +29,9 @@ app.get('/', (req, res) => res.json({
 const userRouter = require('./routes/users');
 app.use('/users',userRouter);
 
+const listRouter = require('./routes/lists');
+app.use('/users/lists',listRouter);
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
