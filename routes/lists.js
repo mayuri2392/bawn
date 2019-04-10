@@ -37,4 +37,11 @@ router.post('/:id/tasks', passport.authenticate('jwt', { session: false }), (req
     	.catch(err => console.log(err));
 });
 
+//Create a new route to fetch all the tasks of list
+router.get('/:id/tasks', passport.authenticate('jwt',{ session: false }), (req, res) => {
+	List.find({'_id':req.params.id, user: req.user})
+	.then(list=> res.json(list))
+	.catch(err => console.log(err));
+});
+
 module.exports = router;

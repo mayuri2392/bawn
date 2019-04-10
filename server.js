@@ -6,10 +6,11 @@ const User = require('./models/User');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const keys = require('./config/keys');
 
 // Body parser middleware
 app.use(express.urlencoded({ extended: false }));
-const db = 'mongodb+srv://mayuri2305:mayuri@cluster0-mhqo2.mongodb.net/astrolabs?retryWrites=true';
+const db= keys.mongoURI;
 
 // Connect to MongoDB
 mongoose

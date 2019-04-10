@@ -3,8 +3,16 @@ const User = require('../models/User');
 const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const keys = require('../config/keys');
 
 const router = express.Router();
+
+//For fetching all the users from db
+router.get('/', (req, res) => {
+    User.find()
+        .then(users => res.json(users))
+        .catch(err => console.log(err))
+});
 
 //Post register
 router.post('/register', (req, res) => {
@@ -51,7 +59,7 @@ router.post('/login', (req, res) => {
                     // Sign Token
                     jwt.sign(
                         payload,
-                        'worstKeptSecret', { expiresIn: 3600 },
+                        keys.secret, { expiresIn: 3600 },
                         (err, token) => {
                             res.json({
                                 success: true,
